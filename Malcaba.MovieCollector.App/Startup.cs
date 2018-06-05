@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Malcaba.MovieCollector.Data.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -31,8 +33,11 @@ namespace Malcaba.MovieCollector.App
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            var sqliteConnString = "DataSource=:memory:";
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<MovieDbContext>(options => options.UseInMemoryDatabase("MovieCollector"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
