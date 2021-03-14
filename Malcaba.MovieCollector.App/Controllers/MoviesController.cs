@@ -56,7 +56,7 @@ namespace Malcaba.MovieCollector.App.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Title,Released,RunTime,Plot,FormatId,RateId")] Movie movie)
+        public async Task<IActionResult> Create([Bind("Id,Title,Released,RunTime,Plot,FormatId,RateId")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +92,7 @@ namespace Malcaba.MovieCollector.App.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Title,Released,RunTime,Plot,FormatId,RateId")] Movie movie)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Released,RunTime,Plot,FormatId,RateId")] Movie movie)
         {
             if (id != movie.Id)
             {

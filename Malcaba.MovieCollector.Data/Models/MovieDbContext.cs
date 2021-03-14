@@ -43,7 +43,7 @@ namespace Malcaba.MovieCollector.Data.Models
 
             modelBuilder.Entity<Movie>(entity =>
             {
-                entity.Property(e => e.Name)
+                entity.Property(e => e.Title)
                     .HasMaxLength(100)
                     .IsUnicode(false);
 
