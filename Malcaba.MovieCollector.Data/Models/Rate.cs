@@ -11,7 +11,7 @@ namespace Malcaba.MovieCollector.Data.Models
             Movie = new HashSet<Movie>();
         }
 
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
 
         public ICollection<Movie> Movie { get; set; }

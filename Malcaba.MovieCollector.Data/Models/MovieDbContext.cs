@@ -17,6 +17,7 @@ namespace Malcaba.MovieCollector.Data.Models
 
         public virtual DbSet<Format> Format { get; set; }
         public virtual DbSet<Movie> Movie { get; set; }
+        public virtual DbSet<Rate> Rate { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -29,6 +30,13 @@ namespace Malcaba.MovieCollector.Data.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Format>(entity =>
+            {
+                entity.Property(e => e.Name)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Rate>(entity =>
             {
                 entity.Property(e => e.Name)
                     .HasMaxLength(50)
