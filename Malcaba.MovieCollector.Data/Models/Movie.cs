@@ -12,7 +12,7 @@ namespace Malcaba.MovieCollector.Data.Models
         public int RunTime { get; set; }
         public string Plot { get; set; }
         public int FormatId { get; set; }
-        public Guid RateId { get; set; }
+        public int RateId { get; set; }
 
 
         public Format Format { get; set; }

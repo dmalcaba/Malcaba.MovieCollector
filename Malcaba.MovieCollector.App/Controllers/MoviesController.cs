@@ -21,7 +21,7 @@ namespace Malcaba.MovieCollector.App.Controllers
         // GET: Movies
         public async Task<IActionResult> Index()
         {
-            var movieDbContext = _context.Movie.Include(m => m.Format);
+            var movieDbContext = _context.Movie.Include(m => m.Format).Include(m => m.Rate);
             return View(await movieDbContext.ToListAsync());
         }
 
@@ -35,6 +35,7 @@ namespace Malcaba.MovieCollector.App.Controllers
 
             var movie = await _context.Movie
                 .Include(m => m.Format)
+                .Include(m => m.Rate)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (movie == null)
             {
@@ -48,15 +49,16 @@ namespace Malcaba.MovieCollector.App.Controllers
         public IActionResult Create()
         {
             ViewData["FormatId"] = new SelectList(_context.Format, "Id", "Name");
+            ViewData["RateId"] = new SelectList(_context.Rate, "Id", "Name");
             return View();
         }
 
         // POST: Movies/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,FormatId")] Movie movie)
+        public async Task<IActionResult> Create([Bind("Id,Name,Title,Released,RunTime,Plot,FormatId,RateId")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -65,6 +67,7 @@ namespace Malcaba.MovieCollector.App.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["FormatId"] = new SelectList(_context.Format, "Id", "Name", movie.FormatId);
+            ViewData["RateId"] = new SelectList(_context.Rate, "Id", "Name", movie.RateId);
             return View(movie);
         }
 
@@ -82,15 +85,16 @@ namespace Malcaba.MovieCollector.App.Controllers
                 return NotFound();
             }
             ViewData["FormatId"] = new SelectList(_context.Format, "Id", "Name", movie.FormatId);
+            ViewData["RateId"] = new SelectList(_context.Rate, "Id", "Name", movie.RateId);
             return View(movie);
         }
 
         // POST: Movies/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,FormatId")] Movie movie)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Title,Released,RunTime,Plot,FormatId,RateId")] Movie movie)
         {
             if (id != movie.Id)
             {
@@ -118,6 +122,7 @@ namespace Malcaba.MovieCollector.App.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["FormatId"] = new SelectList(_context.Format, "Id", "Name", movie.FormatId);
+            ViewData["RateId"] = new SelectList(_context.Rate, "Id", "Name", movie.RateId);
             return View(movie);
         }
 
@@ -131,6 +136,7 @@ namespace Malcaba.MovieCollector.App.Controllers
 
             var movie = await _context.Movie
                 .Include(m => m.Format)
+                .Include(m => m.Rate)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (movie == null)
             {
