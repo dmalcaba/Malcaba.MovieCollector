@@ -20,11 +20,12 @@ namespace Malcaba.MovieCollector.App
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var sqliteConnString = "DataSource=:memory:";
+            var sqliteMemConnString = "DataSource=:memory:";
+            var sqliteConnString = "DataSource=Movies.db";
 
             services.AddControllersWithViews();
 
-            services.AddDbContext<MovieDbContext>(options => options.UseInMemoryDatabase("MovieCollector"));
+            services.AddDbContext<MovieDbContext>(options => options.UseSqlite(sqliteConnString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
