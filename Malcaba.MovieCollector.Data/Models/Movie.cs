@@ -9,9 +9,13 @@ namespace Malcaba.MovieCollector.Data.Models
         public DateTime Released { get; set; }
         public int RunTime { get; set; }
         public string Plot { get; set; }
+        public string Genre { get; set; }
+        public string Collection { get; set; }
+        public bool FullScreen { get; set; }
+        public bool Dolby { get; set; }
         public int FormatId { get; set; }
         public int RateId { get; set; }
-
+        
 
         public Format Format { get; set; }
         public Rate Rate { get; set; }
