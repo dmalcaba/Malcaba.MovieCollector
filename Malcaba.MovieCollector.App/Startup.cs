@@ -1,6 +1,8 @@
 ﻿using Malcaba.MovieCollector.Data.Models;
+using Malcaba.MovieCollector.Data.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,11 +22,10 @@ namespace Malcaba.MovieCollector.App
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var sqliteMemConnString = "DataSource=:memory:";
-            var sqliteConnString = "DataSource=Movies.db";
+
+            var sqliteConnString = GetSqliteConnection("Movies.db");
 
             services.AddControllersWithViews();
-
             services.AddDbContext<MovieDbContext>(options => options.UseSqlite(sqliteConnString));
         }
 
@@ -53,5 +54,16 @@ namespace Malcaba.MovieCollector.App
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/dotnet/standard/data/sqlite/connection-strings
+        /// </summary>
+        /// <param name="dataSource"></param>
+        /// <returns></returns>
+        private string GetSqliteConnection(string dataSource) 
+            => new SqliteConnectionStringBuilder
+                {
+                    DataSource = dataSource
+                }.ToString();
     }
 }
