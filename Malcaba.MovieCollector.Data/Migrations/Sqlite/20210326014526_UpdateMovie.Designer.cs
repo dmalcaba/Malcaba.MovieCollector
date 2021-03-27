@@ -3,14 +3,16 @@ using System;
 using Malcaba.MovieCollector.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Malcaba.MovieCollector.Data.Migrations.Sqlite
 {
     [DbContext(typeof(MovieDbContext))]
-    partial class MovieDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210326014526_UpdateMovie")]
+    partial class UpdateMovie
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -81,9 +83,6 @@ namespace Malcaba.MovieCollector.Data.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasMaxLength(100)
                         .IsUnicode(false);
-
-                    b.Property<string>("TitleSort")
-                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 

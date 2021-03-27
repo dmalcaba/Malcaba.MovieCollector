@@ -19,7 +19,10 @@ namespace Malcaba.MovieCollector.App.Controllers
         // GET: Movies
         public async Task<IActionResult> Index()
         {
-            var movieDbContext = _context.Movie.Include(m => m.Format).Include(m => m.Rate);
+            var movieDbContext = _context.Movie
+                .Include(m => m.Format)
+                .Include(m => m.Rate)
+                .OrderBy(m => m.TitleSort);
             return View(await movieDbContext.ToListAsync());
         }
 
