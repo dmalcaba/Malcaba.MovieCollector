@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Malcaba.MovieCollector.Data
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Malcaba.MovieCollector.App", "Malcaba.MovieCollector.App\Malcaba.MovieCollector.App.csproj", "{DD00B8BD-EFDA-49CF-9314-E76AB5C85E05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Malcaba.MovieCollector.Tests", "Malcaba.MovieCollector.Tests\Malcaba.MovieCollector.Tests.csproj", "{9C657CDD-CE79-47EC-AB65-91445678E530}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Malcaba.MovieCollector.Tests", "Malcaba.MovieCollector.Tests\Malcaba.MovieCollector.Tests.csproj", "{9C657CDD-CE79-47EC-AB65-91445678E530}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Malcaba.MovieCollector.Automation", "Malcaba.MovieCollector.Automation\Malcaba.MovieCollector.Automation.csproj", "{F4E731D8-4C73-4759-BC5A-6F1EC616E7C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{9C657CDD-CE79-47EC-AB65-91445678E530}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C657CDD-CE79-47EC-AB65-91445678E530}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C657CDD-CE79-47EC-AB65-91445678E530}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4E731D8-4C73-4759-BC5A-6F1EC616E7C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4E731D8-4C73-4759-BC5A-6F1EC616E7C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4E731D8-4C73-4759-BC5A-6F1EC616E7C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4E731D8-4C73-4759-BC5A-6F1EC616E7C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,6 +43,7 @@ Global
 		{596F1659-6D15-4666-BA94-EA3C426B6B00} = {99BA18B2-CFD2-4B4C-ABD7-FF6C22F50625}
 		{DD00B8BD-EFDA-49CF-9314-E76AB5C85E05} = {99BA18B2-CFD2-4B4C-ABD7-FF6C22F50625}
 		{9C657CDD-CE79-47EC-AB65-91445678E530} = {99BA18B2-CFD2-4B4C-ABD7-FF6C22F50625}
+		{F4E731D8-4C73-4759-BC5A-6F1EC616E7C7} = {99BA18B2-CFD2-4B4C-ABD7-FF6C22F50625}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {619EBD5F-8629-49CB-866B-6498602ADF07}
