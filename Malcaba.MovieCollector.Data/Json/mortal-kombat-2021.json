@@ -1,0 +1,40 @@
+{
+  "Title": "Mortal Kombat",
+  "Year": "2021",
+  "Rated": "R",
+  "Released": "23 Apr 2021",
+  "Runtime": "110 min",
+  "Genre": "Action, Adventure, Fantasy",
+  "Director": "Simon McQuoid",
+  "Writer": "Greg Russo, Dave Callaham, Oren Uziel",
+  "Actors": "Lewis Tan, Jessica McNamee, Josh Lawson",
+  "Plot": "MMA fighter Cole Young seeks out Earth's greatest champions in order to stand against the enemies of Outworld in a high stakes battle for the universe.",
+  "Language": "English, Japanese, Chinese",
+  "Country": "United States",
+  "Awards": "1 nomination.",
+  "Poster": "https://m.media-amazon.com/images/M/MV5BY2ZlNWIxODMtN2YwZi00ZjNmLWIyN2UtZTFkYmZkNDQyNTAyXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_SX300.jpg",
+  "Ratings": [
+    {
+      "Source": "Internet Movie Database",
+      "Value": "6.1/10"
+    },
+    {
+      "Source": "Rotten Tomatoes",
+      "Value": "55%"
+    },
+    {
+      "Source": "Metacritic",
+      "Value": "44/100"
+    }
+  ],
+  "Metascore": "44",
+  "imdbRating": "6.1",
+  "imdbVotes": "133,256",
+  "imdbID": "tt0293429",
+  "Type": "movie",
+  "DVD": "23 Apr 2021",
+  "BoxOffice": "$42,201,013",
+  "Production": "Broken Road Productions, New Line Cinema, Atomic Monster, NetherRealm Studios, Warner Bros.",
+  "Website": "N/A",
+  "Response": "True"
+}
